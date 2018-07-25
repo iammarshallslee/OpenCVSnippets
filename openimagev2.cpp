@@ -14,9 +14,10 @@ void openimage(string path) {
         cout << "Could not open or find the image." << endl;
         cin.get();
     }
+    resize(image, image, Size(image.cols/3, image.rows/3));
 
     String windowName = "Image";
-    namedWindow(windowName);
+    namedWindow(windowName, CV_WINDOW_AUTOSIZE);
     imshow(windowName, image);
 
     // wait for any keystroke in the window
